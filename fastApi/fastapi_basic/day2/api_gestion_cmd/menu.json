@@ -1,0 +1,38 @@
+{
+  "items": [
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440001",
+      "name": "Burger Classic",
+      "base_price": 4500,
+      "sizes": {"S": 0, "M": 500, "L": 1000},
+      "supplements": [
+        {"name": "cheddar", "price": 300},
+        {"name": "bacon", "price": 500}
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440002",
+      "name": "Pizza Margherita",
+      "base_price": 5000,
+      "sizes": {"S": 0, "M": 800, "L": 1500},
+      "supplements": [
+        {"name": "extra cheese", "price": 400}
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440003",
+      "name": "Chawarma",
+      "base_price": 1500,
+      "sizes": {"S": 0, "M": 100, "L": 500},
+      "supplements": [
+        {"name": "extra sauce", "price": 200},
+        {"name": "frites", "price": 300}
+      ]
+    }
+  ],
+  "drinks": [
+    {"id": "550e8400-e29b-41d4-a716-446655440101", "name": "Coca-Cola", "price": 1500},
+    {"id": "550e8400-e29b-41d4-a716-446655440102", "name": "Sprite", "price": 1500},
+    {"id": "550e8400-e29b-41d4-a716-446655440103", "name": "Eau minérale", "price": 1000}
+  ]
+}

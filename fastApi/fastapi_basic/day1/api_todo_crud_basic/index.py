@@ -8,8 +8,8 @@ app = FastAPI()
 todos = []
 
 @app.get("/todos")
-async def root(sorted_by: str = Query(default=None, description="sort by field", example="id, title, description, completed"),
-            order: str = Query("asc", description="sort order", example="asc, desc")) :
+async def root(sorted_by: str = Query(default=None, description="sort by field", examples="id, title, description, completed"),
+            order: str = Query("asc", description="sort order", examples="asc, desc")) :
     
     result = todos
     if sorted_by is not None :
@@ -46,15 +46,9 @@ async def create_todo(todo : Todo) :
 async def update_todo(todo_id: str, updated_todo: Todo):
     for index, todo in enumerate(todos):
         if todo['id'] == todo_id:
-            # 1. Récupérer les champs fournis
             updated_dict = updated_todo.model_dump(exclude_unset=True)
-            
-            # 2. Mettre à jour le todo existant (pas le remplacer!)
             todo.update(updated_dict)
-            
-            # 3. Garder l'ID original
             todo['id'] = todo_id
-            
             return JSONResponse(content={"message": "Todo updated successfully"}, status_code=200)
     
     raise HTTPException(status_code=404, detail="Todo not found")
